@@ -11,6 +11,20 @@ namespace CustomListClassProj
         T[] items;
         int capacity;
         int count;
+        public int Count { get { return count; } }
+        public int Capacity { get { return count; } }
+
+        public T this[int index]
+        {
+            get
+            {
+                return items[index];
+            }
+            set
+            {
+                items[index] = value;
+            }
+        }
 
         public CustomList()
         {
@@ -20,13 +34,32 @@ namespace CustomListClassProj
         }
         public void Add(T item)
         {
-            items[count] = item;
-            count++;
+            
             if(count >= capacity)
             {
                 capacity *= 2;
-                T[] tempArray = new T[capacity];
+                {
+                    T[] tempArray = new T[capacity];
+
+                    for (int i = 0; i < count; i++) 
+                    {
+                        tempArray[i] = items[i];
+                    }
+                    for(int i = 0; i < count; i++)
+                    {
+                        items[i] = tempArray[i];
+                    }
+                    //move values to temp array
+                    //resize the original array
+                    //move values back to OG
+                }
             }
+            items[count] = item;
+            count++;
+        }
+        public void Remove(T item)
+        {
+            
         }
     }
 }
