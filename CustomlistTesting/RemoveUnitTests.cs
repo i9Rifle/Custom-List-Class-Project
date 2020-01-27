@@ -47,7 +47,7 @@ namespace CustomlistTesting
             MyList.Add(value4);
             MyList.Remove(value1);
             MyList.Remove(value2);
-            actual = MyList[2];
+            actual = MyList[1];
             //assert
             Assert.AreEqual(expected, actual);
         }
@@ -97,7 +97,7 @@ namespace CustomlistTesting
             MyList.Remove(value1);
             MyList.Remove(value3);
             MyList.Remove(value5);
-            actual = MyList[2];
+            actual = MyList[1];
             //assert
             Assert.AreEqual(expected, actual);
         }

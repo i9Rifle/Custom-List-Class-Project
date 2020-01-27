@@ -46,13 +46,12 @@ namespace CustomListClassProj
             items = new T[4];
         }
         public void Add(T item)
-        {          
-            if(count == capacity)
+        {
+            if (count == capacity)
             {
-                
                 T[] tempArray = new T[capacity];
 
-                for (int i = 0; i < count; i++) 
+                for (int i = 0; i < count; i++)
                 {
                     tempArray[i] = items[i];
                 }
@@ -62,15 +61,31 @@ namespace CustomListClassProj
                 {
                     items[i] = tempArray[i];
                 }
-                
             }
-       
-                items[count] = item;
-                count++;
+            items[count] = item;
+            count++;
         }
         public void Remove(T item)
         {
-            
+            bool foundValue = false;
+            T[] tempArray = new T[capacity];
+            for (int i = 0, j = 0; i < count; i++, j++)
+            {
+                if (!items[i].Equals(item) || foundValue)
+                {
+                    tempArray[j] = items[i];
+                }
+                else
+                {
+                    j--;
+                    foundValue = true;
+                }                
+            }
+            if (foundValue)
+            {
+                count--;
+            }
+            items = tempArray;
         }
     }
 }
