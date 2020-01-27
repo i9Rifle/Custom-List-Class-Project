@@ -79,13 +79,22 @@ namespace CustomListClassProj
                 {
                     j--;
                     foundValue = true;
-                }                
+                }
             }
             if (foundValue)
             {
                 count--;
             }
             items = tempArray;
+        }
+        public override string ToString()
+        {
+            StringBuilder newStringBuild = new StringBuilder();
+            for (int i = 0; i < count; i++)
+            {
+                newStringBuild.Append(items[i]);
+            }
+            return newStringBuild.ToString();
         }
     }
 }
