@@ -1,0 +1,35 @@
+Parameters
+item<T>
+
+The object to remove from the List<T>. The value can be null for reference types.
+
+Returns Boolean
+true if item is successfully removed; otherwise, false. This method also returns false if item was not found in the List<T>.
+
+Implements
+Remove(T)
+
+Examples
+
+        public void Remove(T item)
+        {
+            bool foundValue = false;                   
+            T[] tempArray = new T[capacity];           //creates temporary array with new <T> capacity 
+            for (int i = 0, j = 0; i < count; i++, j++)    //2 seperate counters for both lists
+            {
+                if (!items[i].Equals(item) || foundValue)  //if not equal or the specific value is found item moves to new array
+                {
+                    tempArray[j] = items[i];
+                }
+                else
+                {
+                    j--;
+                    foundValue = true;
+                }
+            }
+            if (foundValue)
+            {
+                count--;
+            }
+            items = tempArray;
+        }
