@@ -106,5 +106,18 @@ namespace CustomListClassProj
                 yield return items[i];
             }
         }
+        public static CustomList<T> operator + (CustomList<T> MyList1, CustomList<T> MyList2)
+        {
+            CustomList<T> MyList = new CustomList<T>();
+            for (int i = 0; i < MyList1.count; i++)
+            {
+                MyList.Add(MyList1[i]);
+            }
+            for (int i = 0; i < MyList2.count; i++)
+            {
+                MyList.Add(MyList2[i]);
+            }
+            return MyList;
+        }
     }
 }
