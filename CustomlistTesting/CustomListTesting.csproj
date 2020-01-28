@@ -55,6 +55,7 @@
     <Compile Include="ToStringUnitTests.cs" />
     <Compile Include="AddOverloadUnitTests.cs" />
     <Compile Include="RemoveOverloadUnitTests.cs" />
+    <Compile Include="ZipTwoListsUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

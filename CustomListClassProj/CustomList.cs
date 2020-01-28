@@ -9,7 +9,7 @@ namespace CustomListClassProj
 {
     public class CustomList<T> : IEnumerable
     {   
-
+        
         T[] items;
         int capacity;
         int count;
@@ -129,6 +129,36 @@ namespace CustomListClassProj
             for (int i = 0; i < MyList2.count; i++)
             {
                 MyList.Remove(MyList2[i]);   
+            }
+            return MyList;
+        }
+        public CustomList<T> Zip(CustomList<T> MyList1, CustomList<T> MyList2)
+        {
+            //always zips longer list first
+            CustomList<T> MyList = new CustomList<T>();
+            if (MyList2.count <= MyList1.count)
+            {
+                for (int i = 0; i < MyList1.count; i++)
+                {
+                    MyList.Add(MyList1[i]);
+
+                    if (MyList2.count > i)
+                    {
+                        MyList.Add(MyList2[i]);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < MyList2.count; i++)
+                {
+                    MyList.Add(MyList2[i]);
+
+                    if (MyList1.count > i)
+                    {
+                        MyList.Add(MyList1[i]);
+                    }
+                }
             }
             return MyList;
         }

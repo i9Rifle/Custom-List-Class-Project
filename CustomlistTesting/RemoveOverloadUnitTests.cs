@@ -46,5 +46,18 @@ namespace CustomlistTesting
             //assert
             Assert.AreEqual(expected.ToString(), actual.ToString());
         }
+        [TestMethod]
+        public void RemoveOverload_RemovedValues_CheckCapacity()
+        {
+            //arrange
+            CustomList<int> MyList1 = new CustomList<int>() { 1, 2, 3, 4 };
+            CustomList<int> MyList2 = new CustomList<int>() { 5, 6, 7, 8 };
+            int expected = 0;
+            int actual;
+            //act
+            actual = (MyList1.Capacity - MyList2.Capacity);
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
