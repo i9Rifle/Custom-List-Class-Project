@@ -119,5 +119,18 @@ namespace CustomListClassProj
             }
             return MyList;
         }
+        public static CustomList<T> operator - (CustomList<T> MyList1, CustomList<T> MyList2)
+        {
+            CustomList<T> MyList = new CustomList<T>();
+            for (int i = 0; i < MyList1.count; i++)
+            {
+                MyList.Add(MyList1[i]);
+            }
+            for (int i = 0; i < MyList2.count; i++)
+            {
+                MyList.Remove(MyList2[i]);   
+            }
+            return MyList;
+        }
     }
 }

@@ -54,6 +54,7 @@
     <Compile Include="RemoveUnitTests.cs" />
     <Compile Include="ToStringUnitTests.cs" />
     <Compile Include="AddOverloadUnitTests.cs" />
+    <Compile Include="RemoveOverloadUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
